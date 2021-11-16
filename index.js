@@ -25,7 +25,9 @@ const transporter = nodemailer.createTransport({
 });
 app.post('/weebHook', function(request, response) {
     var apiScriptUrl = "https://script.google.com/macros/s/AKfycbzzNxBN4N6AszC4ATt_3yFGqmu1Xi70HiXS7sZO1Kbsm3zs7sh83zBM9YyLG0qUyBf6/exec?page=";
-    contexto = request.body.queryResult.action;
+    console.log(request.body.queryResult)
+    console.log("request.body.queryResult")
+    contexto = request.body.queryResult.action;    
     console.log(contexto, "contexto");
     if (contexto == "isCFL") {
         var fly;
